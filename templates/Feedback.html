@@ -1,0 +1,51 @@
+{% extends "user_header.html" %}
+{% block body %}
+
+    <style>
+       body{
+            background-color: #abe7f6;
+        }
+    </style>
+<form action="{{ url_for('feedback')}}" method="POST">
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="container-fluid">
+        <div class="container">
+            <h2>Give Feedback Here </h2>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label> Name</label>
+                    <input type="text" name="txt_name" placeholder="Enter name" class="form-control">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label> Email</label>
+                    <input type="email" name="txt_email" placeholder="Enter email" class="form-control">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label>Comments</label>
+                    <textarea name="txt_comments" placeholder="" class="form-control" rows="3"> </textarea>
+                </div>
+            </div>
+            <br>
+             <div class="row">
+                 <div class="col-sm-4"></div>
+                <div class="col-sm-4" >
+                    <input type="submit" name="btn" value="Submit"  class="btn btn-primary">
+                </div>
+                 <div class="col-sm-4"></div>
+            </div>
+        </div>
+            </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+</form>
+{% endblock %}

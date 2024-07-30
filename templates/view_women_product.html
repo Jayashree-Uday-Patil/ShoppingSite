@@ -1,0 +1,79 @@
+{% extends "user_header.html" %}
+{% block body %}
+<style>
+      /* Style for the product box */
+    .product {
+        display: inline-block;
+        width: 220px; /* Set a fixed width for the product boxes */
+        margin: 20px;
+        padding: 20px;
+        background-color:  #ccc;
+        animation: fadeIn 0.5s ease-in-out;
+        text-align: center; /* Center the content horizontally */
+    }
+
+    /* Style for the product image */
+    .product img {
+        width: 100%; /* Make the image fill the product box horizontally */
+        max-height: 200px; /* Set a maximum height for the product images */
+    }
+
+    /* Style for the product description textarea */
+    .product textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none; /* Disable textarea resizing */
+        background-color: #fff; /* Set background color for the textarea */
+        font-size: 16px; /* Set font size for the textarea text */
+    }
+    h4{
+     font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    }
+    .decorative-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.decorative-button:hover {
+    background-color: #2980b9;
+}
+
+</style>
+
+
+<div class="container">
+    {% for row in value %}
+    <div class="product">
+        <div class="row">
+            <div class="col-sm-12">
+                <form action="{{ url_for('Women_products') }}" method="post">
+                <img src="{{ row[2] }}" width="200" height="200">
+                <h4>{{ row[1]}}</h4>
+                     <input type="hidden" name="names" value="{{ row[1] }}">
+                <h3>₹{{ row[3]}}</h3>
+                <input type="hidden" name="price" value="{{ row[3] }}">
+<!--                <h3>Product Des</h3>-->
+                <textarea readonly rows="5" >{{ row[4] }}</textarea>
+                <br>
+                  <center> <button type="submit" name="btn" class="decorative-button">Buy</button></a></center>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

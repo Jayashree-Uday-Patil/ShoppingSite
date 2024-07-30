@@ -1,0 +1,68 @@
+{% extends "admin_header.html" %}
+{% block body %}
+    <style>
+        .container{
+           margin-top: 100px;
+
+          padding:20px;
+        }
+        h1{
+        background-color:black;
+        color:white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="fluid-container">
+    <form action="{{ url_for('Add_mens_product') }} " method="post">
+    <div class="row">
+        <div class="col-sm-2"></div>
+           <div class="col-sm-8">
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+          <center>   <h1>Add Men's Product...</h1> </center>
+<label>Product Name</label>
+<input type="text" name="txt_pname" placeholder="Enter Product Name" class="form-control">
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-sm-12">
+
+<label>Product Image</label>
+<input type="file" name="txt_pimage"  class="form-control">
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-sm-12">
+
+<label>Product Price</label>
+<input type="text" name="txt_pprice" placeholder="Enter Product Price" class="form-control">
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-sm-12">
+
+            <textarea name="txt_pdes" placeholder="Enter Product Details" class="form-control"></textarea>
+        </div>
+    </div>
+    <br><br>
+     <div class="row">
+        <div class="col-sm-12">
+<center>
+<input type="submit" name="btn" row="5" value="ADD" class="btn btn-primary"></center>
+        </div>
+    </div>
+</div>
+           </div>
+           <div class="col-sm-2"></div>
+    </div>
+    </form>
+</div>
+{% endblock %}

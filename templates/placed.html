@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css') }}">
+</head>
+<style>
+
+        .container {
+            padding: 20px;
+            margin: 80px;
+
+        }
+</style>
+<body>
+<div class="container">
+    <h1><B>Order Placed ✅</B></h1>
+    <br><br>
+
+<h2>Thanks for shopping with us!</h2>
+
+     <button type="button" id="shobtn" >Continue Shopping🛒</button>
+     <button type="button" id="hmpg" >Home Page</button>
+
+<script>
+    document.getElementById('shobtn').addEventListener('click', function() {
+
+      // Redirect to the success page
+      window.location.href = '{{ url_for('View_women') }}';
+  });
+     document.getElementById('hmpg').addEventListener('click', function() {
+
+      // Redirect to the success page
+      window.location.href = '{{ url_for('index') }}';
+  });
+</script>
+</div>
+</body>
+</html>

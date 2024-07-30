@@ -1,0 +1,122 @@
+<html>
+ <title>User SignUp </title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css') }}">
+<script src="https://kit.fontawesome.com/c1fc3d2826.js" crossorigin="anonymous"></script>
+    <style>
+
+        .container{
+            padding:20px;
+            margin:80px;
+            background-color: #ccccff ;
+        }
+        h1{
+            text-align:center;
+        }
+
+        .styled-textbox {
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 16px;
+            color: #333;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            display: inline-block; /* Display textboxes in a line */
+            width: calc(33.33% - 20px); /* Set width for each textbox (adjust as needed) */
+            margin-right: 20px; /* Add some spacing between textboxes */
+             width: 200px; /* Set the desired width */
+    height: 40px; /* Set the desired height */
+    font-size: 16px; /* Set the font size */
+        }
+        .styled-textbox:focus {
+            border-color: #007bff;
+            box-shadow: 2px 2px 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        .fancy-heading {
+    font-family: 'Pacifico', cursive; /* Use a fancy font */
+    color: #ff3366; /* Set a stylish color */
+    text-transform: uppercase; /* Convert text to uppercase */
+    font-size: 36px; /* Adjust the font size to your preference */
+    letter-spacing: 2px; /* Increase letter spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow */
+}
+
+    </style>
+
+<body>
+    <div class="fluid-container">
+        <form action="{{ url_for('User_signup') }}" method="POST">
+<div class="row">
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-4">
+        <div class="container">
+           <h1 class="fancy-heading">User Signup</h1>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <label>First name</label>
+                    <input type="text" name="txt_fname" class="styled-textbox" placeholder="Enter first name" class="form-control">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label> Last name</label>
+                    <input type="text" name="txt_lname" class="styled-textbox" placeholder="Enter last name" class="form-control">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label> Contact</label>
+                    <input type="text" name="txt_contact" class="styled-textbox" placeholder="Enter Contact" class="form-control">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label> Address</label>
+                    <input type="text" name="txt_address" class="styled-textbox" placeholder="Enter address" class="form-control">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label> Email</label>
+                    <input type="email" name="txt_email" class="styled-textbox" placeholder="Enter email" class="form-control">
+                </div>
+            </div>
+            <br>
+             <div class="row">
+                <div class="col-sm-12">
+                    <label> Password</label>
+                    <input type="password" name="txt_password" class="styled-textbox" placeholder="Enter password" class="form-control">
+                </div>
+            </div>
+            <br>
+             <div class="row">
+                 <div class="col-sm-3"></div>
+                <div class="col-sm-3" >
+                    <input type="submit" name="btn" value="sign up"  class="btn btn-primary">
+                </div>
+                 <div class="col-sm-6">
+                    <input type="submit" name="btn" value=cancel  class="btn btn-danger">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+        </div>
+            </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <script src="https://kit.fontawesome.com/c1fc3d2826.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url('../static/images/1.jpg'); /* Replace 'your-image-url.jpg' with the URL of your background image */
+            background-size: cover; /* Cover the entire background with the image */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-attachment: fixed; /* Fixed background position */
+        }
+
+        .container {
+            padding: 20px;
+            margin: 80px;
+            background-color: rgba(204, 204, 255, 0.8); /* Background color with opacity */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .styled-textbox {
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 16px;
+            color: #333;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            display: inline-block; /* Display textboxes in a line */
+            width: calc(33.33% - 20px); /* Set width for each textbox (adjust as needed) */
+            margin-right: 20px; /* Add some spacing between textboxes */
+            width: 200px; /* Set the desired width */
+            height: 40px; /* Set the desired height */
+            font-size: 16px; /* Set the font size */
+        }
+
+        .styled-textbox:focus {
+            border-color: #007bff;
+            box-shadow: 2px 2px 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="{{url_for('User_login')}}" method="post">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="container">
+                <center> <i class="fa-solid fa-user fa-7x"></i></center>
+                <h1> User Login</h1>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label> Username</label>
+                        <input type="email" name="txt_username" class="styled-textbox" placeholder="Enter email"
+                               class="form-control">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label> Password</label>
+                        <input type="password" name="txt_pass" class="styled-textbox" placeholder="Enter password"
+                               class="form-control">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3">
+                        <input type="submit" name="" value="log in" class="btn btn-primary" onclick="validation()">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="submit" name="" value="cancel" class="btn btn-danger">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</form>
+</body>
+</html>

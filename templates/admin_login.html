@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login </title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css') }}">
+<script src="https://kit.fontawesome.com/c1fc3d2826.js" crossorigin="anonymous"></script>
+    <style>
+
+        .container{
+            padding:20px;
+            margin:80px;
+            background-color: #ccccff ;
+        }
+        h1{
+            text-align:center;
+        }
+    </style>
+
+</head>
+<body>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="container">
+           <center> <i class="fa-solid fa-user fa-7x"></i></center>
+            <h1>Admin Login</h1>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label> Username</label>
+                    <input type="email" name="txt_username" placeholder="Enter email" class="form-control">
+                </div>
+            </div>
+            <br>
+             <div class="row">
+                <div class="col-sm-12">
+                    <label> Password</label>
+                    <input type="password" name="txt_pass" placeholder="Enter password" class="form-control">
+                </div>
+            </div>
+            <br>
+             <div class="row">
+                 <div class="col-sm-3"></div>
+                <div class="col-sm-3" >
+                    <input type="submit" name="" value="log in"  class="btn btn-primary" onclick="validation()">
+                </div>
+                 <div class="col-sm-6">
+                    <input type="submit" name="" value=cancel  class="btn btn-danger">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+</body>
+</html>

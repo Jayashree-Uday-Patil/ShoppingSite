@@ -1,0 +1,46 @@
+{% extends "admin_header.html" %}
+{% block body %}
+
+
+<div class="container">
+<center><h1>Women's Products</h1></center>
+   <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+
+      <th scope="col">Product Name</th>
+      <th scope="col">Product Image</th>
+       <th scope="col">Product Price</th>
+      <th scope="col">Product Description</th>
+      <th scope="col">Update</th>
+       <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for row in value %}
+    <tr>
+    <form action="{{ url_for('delete_women_product') }}" method="post" >
+<td >{{ row[0]}}</td>
+
+       <input type="hidden" name="txt_id" value="{{ row[0] }}">
+       <td><input type="text" name="txt_pname" value="{{ row[1] }}" placeholder="Enter Name" class="form-control"></td>
+       <td><input type="file" name="txt_pimage" value="{{ row[2] }}" placeholder="Enter Image" class="form-control"></td>
+      <td><input type="text" name="txt_price" value="{{ row[3] }}" placeholder="Enter Price" class="form-control"></td>
+       <td><input type="text" name="txt_desc" value="{{ row[4] }}" placeholder="Enter Description" class="form-control"></td>
+      <td><input type="submit" name="btn" value="Update" class="btn btn-success"></td>
+      </form>
+
+       <form action="{{ url_for('delete_women_product') }}" method="post">
+         <input type="hidden" name="txt_id" value="{{ row[0] }}">
+           <td><input type="submit" name="btn" value="Delete" class="btn btn-danger"></td>
+       </form>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <!-- Include necessary CSS and scripts here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <!-- <script src="https://kit.fontawesome.com/c1fc3d2826.js" crossorigin="anonymous"></script> -->
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Address Details:</h2>
+    <label>Name:</label>
+    <input type="text" name="name" class="styled-textbox" value="{{ session['Fname'] }} {{ session['Lname'] }}" readonly>
+    <br><br>
+    <label>Contact:</label>
+    <input type="number" name="contact" class="styled-textbox" value="{{ session['num'] }}" readonly>
+    <br><br>
+    <label>Address:</label>
+    <input type="text" name="address" class="styled-textbox" value="{{ session['add'] }}" readonly>
+    <br><br>
+
+    <h2>Product Details:</h2>
+    <label>Name:</label>
+    <input type="text" name="productName" class="styled-textbox" value="{{ names }}" readonly>
+    <br><br>
+    <label>Price:</label>
+    <input type="text" name="price" class="styled-textbox" value="{{ price }}" readonly>
+    <br><br>
+
+    <h2>Payment Details:</h2>
+    <label for="cardNumber">Card Number:</label>
+    <input type="text" id="cardNumber" class="styled-textbox" name="cardNumber" required>
+    <br><br>
+    <label for="expiryDate">Expiry Date:</label>
+    <input type="text" id="expiryDate" class="styled-textbox" name="expiryDate" required>
+    <br><br>
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" class="styled-textbox" name="cvv" required>
+    <br><br>
+    <label for="amount">Amount:</label>
+    <input type="text" id="amount" class="styled-textbox" name="amount" value="{{ price }}" readonly>
+    <br><br>
+    <!-- Add an onclick event to handle redirection -->
+    <button type="button" id="myButton" >Pay Now</button>
+</div>
+
+<script>
+    document.getElementById('myButton').addEventListener('click', function() {
+
+      // Redirect to the success page
+      window.location.href = '{{ url_for('Placed') }}';
+  });
+</script>
+
+</body>
+</html>
