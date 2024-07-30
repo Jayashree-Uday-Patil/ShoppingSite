@@ -1,2 +1,2 @@
 # ShoppingSite
-this is my first project on GitHub 
+It is my first website - Shopping website. 
